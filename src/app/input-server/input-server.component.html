@@ -1,0 +1,19 @@
+<form action="input-server_submit" method="get" accept-charset="utf-8">
+	<label>Type name of the new Server</label>
+	<!-- <input 
+		type="input" 
+		name="serverName"
+		class="form-control"
+		(input)="onUpdateServerName($event)"
+	> -->
+	<input 
+		type="input" 
+		name="serverName"
+		class="form-control"
+		(input)="checkInputValue($event)"
+		[(ngModel)]="serverName"
+	>
+	<p>{{ serverName }}</p>
+	<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="addNewServer()">Add Server</button>
+</form>
+<p>{{ addNewServerStatus }}</p>
